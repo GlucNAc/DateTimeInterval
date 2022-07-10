@@ -1,0 +1,82 @@
+{
+    "name": "glucnac/datetimeinterval",
+    "description": "DateTimeInterval is wrapper of DateInterval that provides useful methods for calculating delays.",
+    "type": "library",
+    "keywords": ["DateTime","Date","Time","Interval","DateTime operation","date_diff"],
+    "homepage": "https://gitlab.com/datetimetools/datetimeinterval",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "GlucNAc",
+            "homepage": "https://gitlab.com/GlucNAc"
+        }
+    ],
+    "support": {
+        "issues": "https://gitlab.com/datetimetools/datetimeinterval/-/issues",
+        "source": "https://gitlab.com/datetimetools/datetimeinterval"
+    },
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^1",
+        "mockery/mockery": "^1",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-mockery": "^0.12",
+        "phpunit/phpunit": "^9",
+        "squizlabs/php_codesniffer": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlucNAc\\DateTimeInterval\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GlucNAc\\DateTimeInterval\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "parallel-lint src tests --colors",
+        "phpcs": "phpcs src tests --standard=psr12 -sp --colors",
+        "phpstan": [
+            "phpstan analyse src -c phpstan.neon --level max",
+            "phpstan analyse tests -c phpstan.neon --level max"
+        ],
+        "phpunit": "phpunit --verbose --colors=always --testdox",
+        "phpunit-ci": "phpunit --verbose --coverage-clover build/logs/clover.xml",
+        "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
+        "php_cs-check": [
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --dry-run --diff --show-progress=estimating",
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --dry-run --diff --show-progress=estimating"
+        ],
+        "php_cs-fix": [
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --show-progress",
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --show-progress"
+        ],
+        "phpbcf": [
+            "phpcbf src",
+            "phpcbf tests"
+        ],
+        "check": [
+            "@lint",
+            "@php_cs-check",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "fix": [
+            "@phpbcf",
+            "@php_cs-fix"
+        ],
+        "test": [
+            "@phpunit"
+        ],
+        "test-ci": [
+            "@check",
+            "@phpunit-ci"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

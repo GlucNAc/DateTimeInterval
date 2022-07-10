@@ -1,0 +1,9 @@
+.idea
+.phpunit.result.cache
+.php-cs-fixer.cache
+composer.lock
+/coverage
+docker/.env.local
+phpunit.xml
+tools/php-cs-fixer/vendor
+/vendor

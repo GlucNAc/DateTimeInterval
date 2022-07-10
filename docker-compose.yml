@@ -1,0 +1,8 @@
+services:
+  php:
+    build: ./docker/php
+    image: php:${PHP_VERSION}
+    user: ${UID}:${GID}
+    volumes:
+      - ./docker/php/conf/99-php.ini:/usr/local/etc/php/conf.d/99-php.ini
+      - ./:/var/www/html
