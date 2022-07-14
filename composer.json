@@ -37,14 +37,14 @@
         }
     },
     "scripts": {
-        "lint": "parallel-lint src tests --colors",
-        "phpcs": "phpcs src tests --standard=psr12 -sp --colors",
+        "php-lint": "parallel-lint src tests --colors",
+        "phpcs": "phpcs -v -sp --colors --standard=PSR12 --ignore=./src/Kernel.php ./src ./tests",
         "phpstan": [
             "phpstan analyse src -c phpstan.neon --level max",
             "phpstan analyse tests -c phpstan.neon --level max"
         ],
         "phpunit": "phpunit --verbose --colors=always --testdox",
-        "phpunit-ci": "phpunit --verbose --coverage-clover build/logs/clover.xml",
+        "phpunit-ci": "phpunit --coverage-text --colors=never",
         "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
         "php_cs-check": [
             "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --dry-run --diff --show-progress=estimating",
@@ -59,7 +59,7 @@
             "phpcbf tests"
         ],
         "check": [
-            "@lint",
+            "@php-lint",
             "@php_cs-check",
             "@phpcs",
             "@phpstan"
@@ -70,10 +70,6 @@
         ],
         "test": [
             "@phpunit"
-        ],
-        "test-ci": [
-            "@check",
-            "@phpunit-ci"
         ]
     },
     "config": {
