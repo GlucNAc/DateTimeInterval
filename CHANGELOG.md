@@ -10,14 +10,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Changelog
+* .gitlab-ci.yml
 
 ### Changed
 
 * Code cleaning to satisfy code sniffers
+* README.md
 
 ### Removed
 
 * Dockerfile (use [Dockker GlucNAc repo](https://hub.docker.com/repository/docker/glucnac/php) instead)
+* travis.yml
 
 ## [1.0.0] - 2022-07-10
 
