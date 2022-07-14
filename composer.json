@@ -51,8 +51,8 @@
             "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --dry-run --diff --show-progress=estimating"
         ],
         "php_cs-fix": [
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --show-progress",
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --show-progress"
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --show-progress=estimating",
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --show-progress=estimating"
         ],
         "phpbcf": [
             "phpcbf src",
