@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2022-07-16
+
+### Changed
+
+* Upgrade to php 8.1
+* DateTimeInterval (remove phpstan exception)
+* README.md
+
+## [2.0.0] - 2022-07-16
+
+### Changed
+
+* DateTimeInterval (upgrade to php 7.4)
+* README.md
+
 ## [1.0.1] - 2022-07-14
 
 ### Added

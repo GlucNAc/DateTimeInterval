@@ -3,7 +3,7 @@
 namespace GlucNAc\DateTimeInterval;
 
 use DateInterval;
-use PHPStan\ShouldNotHappenException;
+use RuntimeException;
 
 /**
  * Class DateTimeInterval
@@ -118,14 +118,14 @@ class DateTimeInterval
      *
      * @see date_diff()
      *
-     * @throws ShouldNotHappenException
+     * @throws RuntimeException
      */
     public function getDays(bool $absoluteCount = true): int
     {
         $count = $absoluteCount ? $this->dateInterval->days : $this->dateInterval->d;
 
         if ($count === false) {
-            throw new ShouldNotHappenException('count is false');
+            throw new \RuntimeException('count is false');
         }
 
         return $this->isNegative() ? - $count : $count;

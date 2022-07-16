@@ -106,8 +106,7 @@ $dateInterval = $dateTimeInterval->getDateInterval();
 ## Copyright and License
 
 The GlucNAc/DateTimeInterval library is copyright © [GlucNAc](https://gitlab.com/GlucNAc)
-and licensed for use under the MIT License (MIT). Please see [LICENSE][] for
-more information.
+and licensed for use under the MIT License (MIT).
 
 
 [composer]: http://getcomposer.org/
