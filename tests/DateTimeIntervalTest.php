@@ -244,7 +244,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $this->assertEquals(-1, $dateTimeInterval->getMinutes(false));
     }
-    
+
     /*
      * SECONDS
      */

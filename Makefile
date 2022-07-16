@@ -34,7 +34,10 @@ check: vendor ## Execute linters and check style
 test: vendor ## Run tests suites
 	$(PHP) composer test
 
-.PHONY: fix check test
+ci: vendor ## Run tests suites
+	$(PHP) composer test-ci
+
+.PHONY: fix check test ci
 
 #####################################################################################################################
 ## FILES                                                                                                           ##
@@ -45,7 +48,6 @@ test: vendor ## Run tests suites
 
 ./docker/.env.local:
 	cp ./docker/.env.example ./docker/.env.local
-	sed -i "s#{php_version}#`head -1 docker/php/Dockerfile | cut -d ':' -f 2`#g" ./docker/.env.local
 	sed -i "s#{uid}#`id -u`#g" ./docker/.env.local
 	sed -i "s#{gid}#`id -g`#g" ./docker/.env.local
 

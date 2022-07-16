@@ -3,6 +3,7 @@
 namespace GlucNAc\DateTimeInterval;
 
 use DateInterval;
+use PHPStan\ShouldNotHappenException;
 
 /**
  * Class DateTimeInterval
@@ -19,8 +20,11 @@ class DateTimeInterval
      */
     private $dateInterval;
 
-    public function __construct(\DateTimeInterface $supDate, \DateTimeInterface $infDate, bool $returnAbsoluteValue = false)
-    {
+    public function __construct(
+        \DateTimeInterface $supDate,
+        \DateTimeInterface $infDate,
+        bool $returnAbsoluteValue = false
+    ) {
         $this->dateInterval = \date_diff($infDate, $supDate, $returnAbsoluteValue);
     }
 
@@ -116,10 +120,16 @@ class DateTimeInterval
      * * with <em>$absoluteCount</em> = false, this method will return -29
      *
      * @see date_diff()
+     *
+     * @throws ShouldNotHappenException
      */
     public function getDays(bool $absoluteCount = true): int
     {
         $count = $absoluteCount ? $this->dateInterval->days : $this->dateInterval->d;
+
+        if ($count === false) {
+            throw new ShouldNotHappenException('count is false');
+        }
 
         return $this->isNegative() ? - $count : $count;
     }
