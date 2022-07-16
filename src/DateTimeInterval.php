@@ -15,10 +15,7 @@ use PHPStan\ShouldNotHappenException;
  */
 class DateTimeInterval
 {
-    /**
-     * @var DateInterval
-     */
-    private $dateInterval;
+    private DateInterval $dateInterval;
 
     public function __construct(
         \DateTimeInterface $supDate,
