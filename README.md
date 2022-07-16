@@ -116,13 +116,13 @@ more information.
 [badge-release]: https://img.shields.io/packagist/v/GlucNAc/DateTimeInterval.svg?style=flat-square&label=release
 [badge-license]: https://img.shields.io/packagist/l/GlucNAc/DateTimeInterval.svg?style=flat-square
 [badge-php]: https://img.shields.io/packagist/php-v/GlucNAc/DateTimeInterval.svg?style=flat-square
-[badge-pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/prepare_for_ci/pipeline.svg
-[badge-coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/prepare_for_ci/coverage.svg
+[badge-pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/master/pipeline.svg
+[badge-coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/master/coverage.svg
 [badge-downloads]: https://img.shields.io/packagist/dt/GlucNAc/DateTimeInterval.svg?style=flat-square&colorB=mediumvioletred
 
 [php]: https://php.net
 [source]: https://gitlab.com/datetimetools/datetimeinterval
 [packagist]: https://packagist.org/packages/GlucNAc/DateTimeInterval
-[pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/prepare_for_ci
-[coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/prepare_for_ci
+[pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master
+[coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master
 [downloads]: https://packagist.org/packages/GlucNAc/DateTimeInterval
