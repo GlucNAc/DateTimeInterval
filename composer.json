@@ -3,7 +3,7 @@
     "description": "DateTimeInterval is wrapper of DateInterval that provides useful methods for calculating delays.",
     "type": "library",
     "keywords": ["DateTime","Date","Time","Interval","DateTime operation","date_diff"],
-    "homepage": "https://gitlab.com/datetimetools/datetimeinterval",
+    "homepage": "https://gitlab.com/GlucNAc/DateTimeInterval",
     "license": "MIT",
     "authors": [
         {
