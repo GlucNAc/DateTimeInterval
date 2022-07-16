@@ -10,7 +10,7 @@ use RuntimeException;
  *
  * * <em>$supDate</em> should be greater than <em>$infDate</em>.
  *
- * * Returns negative value if <em>$supDate</em> < <em>$infDate</em>,
+ * * Returns negative value if <em>$supDate</em> &lt; <em>$infDate</em>,
  * unless <em>$forceReturningPositiveValue</em> = true.
  */
 class DateTimeInterval
@@ -26,7 +26,7 @@ class DateTimeInterval
     }
 
     /**
-     * Returns the count of COMPLETED days between the two DateTime instances of this interval.
+     * Returns the count of COMPLETED years between the two DateTime instances of this interval.
      *
      * <u>POSITIVE VALUES</u>
      *
@@ -35,6 +35,8 @@ class DateTimeInterval
      * e.g. For 2022-08-28 and 2021-08-28: returns 1
      *
      * e.g. For 2022-08-27 and 2021-08-28: returns 0
+     *
+     * e.g. For 2022-08-29 01:00:00 and 2021-08-28 00:59:59: returns 0 (period not completed)
      *
      * <u>NEGATIVE VALUES</u>
      *
@@ -132,7 +134,7 @@ class DateTimeInterval
     }
 
     /**
-     * Returns the count of COMPLETED days between the two DateTime instances of this interval.
+     * Returns the count of COMPLETED hours between the two DateTime instances of this interval.
      *
      * <u>POSITIVE VALUES</u>
      *
@@ -172,7 +174,7 @@ class DateTimeInterval
     }
 
     /**
-     * Returns the count of COMPLETED days between the two DateTime instances of this interval.
+     * Returns the count of COMPLETED minutes between the two DateTime instances of this interval.
      *
      * <u>POSITIVE VALUES</u>
      *
@@ -208,7 +210,7 @@ class DateTimeInterval
     }
 
     /**
-     * Returns the count of COMPLETED days between the two DateTime instances of this interval.
+     * Returns the count of COMPLETED seconds between the two DateTime instances of this interval.
      *
      * <u>POSITIVE VALUES</u>
      *
@@ -244,7 +246,7 @@ class DateTimeInterval
     }
 
     /**
-     * Returns the count of COMPLETED days between the two DateTime instances of this interval.
+     * Returns the count of COMPLETED microseconds between the two DateTime instances of this interval.
      *
      * <u>POSITIVE VALUES</u>
      *
