@@ -3,7 +3,7 @@
 [![Source Code][badge-source]][source]
 [![Latest Version][badge-release]][packagist]
 [![PHP Version][badge-php]][php]
-[![Build Status][badge-build]][build]
+[![Pipeline status][badge-pipeline]][pipeline]
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
@@ -116,13 +116,13 @@ more information.
 [badge-release]: https://img.shields.io/packagist/v/GlucNAc/DateTimeInterval.svg?style=flat-square&label=release
 [badge-license]: https://img.shields.io/packagist/l/GlucNAc/DateTimeInterval.svg?style=flat-square
 [badge-php]: https://img.shields.io/packagist/php-v/GlucNAc/DateTimeInterval.svg?style=flat-square
-[badge-build]: https://img.shields.io/travis/GlucNAc/DateTimeInterval/master.svg?style=flat-square
-[badge-coverage]: https://img.shields.io/coveralls/github/GlucNAc/DateTimeInterval/master.svg?style=flat-square
+[badge-pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/prepare_for_ci/pipeline.svg
+[badge-coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/prepare_for_ci/coverage.svg
 [badge-downloads]: https://img.shields.io/packagist/dt/GlucNAc/DateTimeInterval.svg?style=flat-square&colorB=mediumvioletred
 
 [php]: https://php.net
 [source]: https://gitlab.com/datetimetools/datetimeinterval
 [packagist]: https://packagist.org/packages/GlucNAc/DateTimeInterval
-[build]: https://travis-ci.org/GlucNAc/DateTimeInterval
-[coverage]: https://coveralls.io/r/GlucNAc/DateTimeInterval?branch=master
+[pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/prepare_for_ci
+[coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/prepare_for_ci
 [downloads]: https://packagist.org/packages/GlucNAc/DateTimeInterval
