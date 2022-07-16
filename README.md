@@ -7,7 +7,7 @@
 [![Coverage Status][badge-coverage]][coverage]
 [![Total Downloads][badge-downloads]][downloads]
 
-When you want to compute delay between two DateTimes, it can be quickly tricky to get the result you are expecting for,
+When you want to compute a delay between two DateTimes, it can be quickly tricky to get the result you are expecting for,
 and sometimes you need to perform some calculations, which can lead to incorrect result.
 
 DateTimeInterval is wrapper of DateInterval that provides useful methods for calculating delays. Thanks to this library,
@@ -31,7 +31,7 @@ composer require glucnac/datetimeinterval
 
 To understand the usefulness of this library, let's try to compute some delays.
 
-### Get delay using date_diff()
+### Get delays using date_diff()
 ```php
 // Let's say you want to compute some delays between 2022-07-15 and 2022-08-15.
 
@@ -73,13 +73,13 @@ $dateInterval->m // 1
 // ->m also returns a relative count
 ```
 
-->y, ->m, ->d, ->h, ->i, ->s, ->f : all are returning a relative count, which means that for any absolute result,
+Actually, ->y, ->m, ->d, ->h, ->i, ->s, ->f : all are returning a relative count, which means that for any absolute result,
 you must perform some calculations using ->days, which is the only result to be absolute. Even though these calculations
 are simple, rewriting them on each of your project is boring and can lead to inattention mistakes.
 
 That's why this library has been made for : to abstract the calculations and to get a more object-oriented coding.
 
-### Get delay using DateTimeInterval
+### Get delays using DateTimeInterval
 ```php
 $firstDate = new DateTimeImmutable('2022-07-15');
 $secondDate = new DateTimeImmutable('2022-08-15');
@@ -105,8 +105,8 @@ $dateInterval = $dateTimeInterval->getDateInterval();
 
 ## Copyright and License
 
-The GlucNAc/DateTimeInterval library is copyright © [GlucNAc](https://gitlab.com/GlucNAc)
-and licensed for use under the MIT License (MIT).
+The GlucNAc/DateTimeInterval library is copyright © [GlucNAc](https://gitlab.com/GlucNAc) and licensed for use under the
+MIT License (MIT). Please see [LICENSE](https://gitlab.com/GlucNAc/DateTimeInterval/-/blob/master/LICENSE) for more information.
 
 
 [composer]: http://getcomposer.org/
