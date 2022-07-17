@@ -120,7 +120,7 @@ MIT License (MIT). Please see [LICENSE](https://gitlab.com/GlucNAc/DateTimeInter
 [badge-downloads]: https://img.shields.io/packagist/dt/GlucNAc/DateTimeInterval.svg?style=flat-square&colorB=mediumvioletred
 
 [php]: https://php.net
-[source]: https://gitlab.com/datetimetools/datetimeinterval
+[source]: https://gitlab.com/GlucNAc/DateTimeInterval
 [packagist]: https://packagist.org/packages/GlucNAc/DateTimeInterval
 [pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master
 [coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master

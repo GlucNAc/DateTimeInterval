@@ -12,8 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://gitlab.com/datetimetools/datetimeinterval/-/issues",
-        "source": "https://gitlab.com/datetimetools/datetimeinterval"
+        "issues": "https://gitlab.com/GlucNAc/DateTimeInterval/-/issues",
+        "source": "https://gitlab.com/GlucNAc/DateTimeInterval"
     },
     "require": {
         "php": "^7.4|^8.1"
