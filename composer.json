@@ -16,15 +16,15 @@
         "source": "https://gitlab.com/GlucNAc/DateTimeInterval"
     },
     "require": {
-        "php": "^7.4|^8.1"
+        "php": "^8.1"
     },
     "require-dev": {
-        "php-parallel-lint/php-parallel-lint": "^1.3",
         "mockery/mockery": "^1.5",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
         "phpstan/phpstan": "^1.8",
         "phpstan/phpstan-mockery": "^1.1",
         "phpunit/phpunit": "^9.5",
-        "squizlabs/php_codesniffer": "^3.7"
+        "symplify/easy-coding-standard": "^12.1"
     },
     "autoload": {
         "psr-4": {
@@ -35,42 +35,6 @@
         "psr-4": {
             "GlucNAc\\DateTimeInterval\\Test\\": "tests/"
         }
-    },
-    "scripts": {
-        "php-lint": "parallel-lint src tests --colors",
-        "phpcs": "phpcs -v -sp --colors --standard=PSR12 --ignore=./src/Kernel.php ./src ./tests",
-        "phpstan": [
-            "phpstan analyse src -c phpstan.neon --level max",
-            "phpstan analyse tests -c phpstan.neon --level max"
-        ],
-        "phpunit": "phpunit --verbose --colors=always --testdox",
-        "phpunit-ci": "phpunit --coverage-text --colors=never",
-        "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
-        "php_cs-check": [
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --dry-run --diff --show-progress=estimating",
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --dry-run --diff --show-progress=estimating"
-        ],
-        "php_cs-fix": [
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --show-progress=estimating",
-            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests --show-progress=estimating"
-        ],
-        "phpbcf": [
-            "phpcbf src",
-            "phpcbf tests"
-        ],
-        "check": [
-            "@php-lint",
-            "@php_cs-check",
-            "@phpcs",
-            "@phpstan"
-        ],
-        "fix": [
-            "@phpbcf",
-            "@php_cs-fix"
-        ],
-        "test": [
-            "@phpunit"
-        ]
     },
     "config": {
         "sort-packages": true

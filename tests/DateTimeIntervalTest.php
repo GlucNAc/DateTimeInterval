@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GlucNAc\DateTimeInterval\Test;
 
 use DateTime;
 use GlucNAc\DateTimeInterval\DateTimeInterval;
-use Mockery\Adapter\Phpunit\MockeryTestCase;
+use PHPUnit\Framework\TestCase;
 
-class DateTimeIntervalTest extends MockeryTestCase
+class DateTimeIntervalTest extends TestCase
 {
     /*
      * IS NEGATIVE
@@ -22,7 +24,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate, false);
 
-        $this->assertEquals(true, $dateTimeInterval->isNegative());
+        self::assertTrue($dateTimeInterval->isNegative());
     }
 
     public function testIsNegativeKo(): void
@@ -32,7 +34,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate, false);
 
-        $this->assertEquals(false, $dateTimeInterval->isNegative());
+        self::assertFalse($dateTimeInterval->isNegative());
     }
 
     public function testIsNegativeForceKo(): void
@@ -42,7 +44,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate, true);
 
-        $this->assertEquals(false, $dateTimeInterval->isNegative());
+        self::assertFalse($dateTimeInterval->isNegative());
     }
 
     /*
@@ -56,7 +58,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(1, $dateTimeInterval->getYears());
+        self::assertEquals(1, $dateTimeInterval->getYears());
     }
 
     public function testGetYearsNegative(): void
@@ -66,7 +68,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-1, $dateTimeInterval->getYears());
+        self::assertEquals(-1, $dateTimeInterval->getYears());
     }
 
     /*
@@ -80,7 +82,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(15, $dateTimeInterval->getMonths(true));
+        self::assertEquals(15, $dateTimeInterval->getMonths());
     }
 
     public function testGetMonthsRelativePositive(): void
@@ -90,7 +92,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(3, $dateTimeInterval->getMonths(false));
+        self::assertEquals(3, $dateTimeInterval->getMonths(false));
     }
 
     public function testGetMonthsAbsoluteNegative(): void
@@ -100,7 +102,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-15, $dateTimeInterval->getMonths(true));
+        self::assertEquals(-15, $dateTimeInterval->getMonths());
     }
 
     public function testGetMonthsRelativeNegative(): void
@@ -110,7 +112,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-3, $dateTimeInterval->getMonths(false));
+        self::assertEquals(-3, $dateTimeInterval->getMonths(false));
     }
 
     /*
@@ -124,7 +126,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(60, $dateTimeInterval->getDays(true));
+        self::assertEquals(60, $dateTimeInterval->getDays());
     }
 
     public function testGetDaysRelativePositive(): void
@@ -134,7 +136,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(30, $dateTimeInterval->getDays(false));
+        self::assertEquals(30, $dateTimeInterval->getDays(false));
     }
 
     public function testGetDaysAbsoluteNegative(): void
@@ -144,7 +146,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-62, $dateTimeInterval->getDays(true));
+        self::assertEquals(-62, $dateTimeInterval->getDays());
     }
 
     public function testGetDaysRelativeNegative(): void
@@ -154,7 +156,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-1, $dateTimeInterval->getDays(false));
+        self::assertEquals(-1, $dateTimeInterval->getDays(false));
     }
 
     /*
@@ -168,7 +170,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(24, $dateTimeInterval->getHours(true));
+        self::assertEquals(24, $dateTimeInterval->getHours());
     }
 
     public function testGetHoursRelativePositive(): void
@@ -178,7 +180,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(0, $dateTimeInterval->getHours(false));
+        self::assertEquals(0, $dateTimeInterval->getHours(false));
     }
 
     public function testGetHoursAbsoluteNegative(): void
@@ -188,7 +190,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-24, $dateTimeInterval->getHours(true));
+        self::assertEquals(-24, $dateTimeInterval->getHours());
     }
 
     public function testGetHoursRelativeNegative(): void
@@ -198,7 +200,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(0, $dateTimeInterval->getHours(false));
+        self::assertEquals(0, $dateTimeInterval->getHours(false));
     }
 
     /*
@@ -212,7 +214,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(1441, $dateTimeInterval->getMinutes(true));
+        self::assertEquals(1441, $dateTimeInterval->getMinutes());
     }
 
     public function testGetMinutesRelativePositive(): void
@@ -222,7 +224,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(1, $dateTimeInterval->getMinutes(false));
+        self::assertEquals(1, $dateTimeInterval->getMinutes(false));
     }
 
     public function testGetMinutesAbsoluteNegative(): void
@@ -232,7 +234,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-1441, $dateTimeInterval->getMinutes(true));
+        self::assertEquals(-1441, $dateTimeInterval->getMinutes());
     }
 
     public function testGetMinutesRelativeNegative(): void
@@ -242,7 +244,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-1, $dateTimeInterval->getMinutes(false));
+        self::assertEquals(-1, $dateTimeInterval->getMinutes(false));
     }
 
     /*
@@ -256,7 +258,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(120, $dateTimeInterval->getSeconds(true));
+        self::assertEquals(120, $dateTimeInterval->getSeconds());
     }
 
     public function testGetSecondsRelativePositive(): void
@@ -266,7 +268,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(0, $dateTimeInterval->getSeconds(false));
+        self::assertEquals(0, $dateTimeInterval->getSeconds(false));
     }
 
     public function testGetSecondsAbsoluteNegative(): void
@@ -276,7 +278,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-120, $dateTimeInterval->getSeconds(true));
+        self::assertEquals(-120, $dateTimeInterval->getSeconds());
     }
 
     public function testGetSecondsRelativeNegative(): void
@@ -286,7 +288,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(0, $dateTimeInterval->getSeconds(false));
+        self::assertEquals(0, $dateTimeInterval->getSeconds(false));
     }
 
     /*
@@ -300,7 +302,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(2000.0, $dateTimeInterval->getMicroSeconds(true));
+        self::assertEquals(2000.0, $dateTimeInterval->getMicroSeconds());
     }
 
     public function testGetMicroSecondsRelativePositive(): void
@@ -310,7 +312,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($supDate, $infDate);
 
-        $this->assertEquals(0.0, $dateTimeInterval->getMicroSeconds(false));
+        self::assertEquals(0.0, $dateTimeInterval->getMicroSeconds(false));
     }
 
     public function testGetMicroSecondsAbsoluteNegative(): void
@@ -320,7 +322,7 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-2000.0, $dateTimeInterval->getMicroSeconds(true));
+        self::assertEquals(-2000.0, $dateTimeInterval->getMicroSeconds());
     }
 
     public function testGetMicroSecondsRelativeNegative(): void
@@ -330,6 +332,23 @@ class DateTimeIntervalTest extends MockeryTestCase
 
         $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
 
-        $this->assertEquals(-0.0, $dateTimeInterval->getMicroSeconds(false));
+        self::assertEquals(-0.0, $dateTimeInterval->getMicroSeconds(false));
+    }
+
+    /*
+     * FORMAT
+     */
+
+    public function testFormat(): void
+    {
+        $supDate = new DateTime('2021-08-27 00:00:00');
+        $infDate = new DateTime('2022-09-29 23:35:59');
+
+        $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
+
+        self::assertEquals(
+            '1 years, 1 months, 2 days, 23 hours, 35 minutes, 59 seconds',
+            $dateTimeInterval->format('%y years, %m months, %d days, %h hours, %i minutes, %s seconds')
+        );
     }
 }
