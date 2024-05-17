@@ -280,7 +280,6 @@ class DateTimeInterval
         return $this->isNegative() ? -$count : $count;
     }
 
-
     public function isNegative(): bool
     {
         return (bool)$this->dateInterval->invert;
@@ -288,17 +287,12 @@ class DateTimeInterval
 
     /**
      * @see DateTimeInterval::format() for accepted format.
-     *
-     * @codeCoverageIgnore
      */
     public function format(string $format): string
     {
-        return $this->dateInterval->format($format);
+        return $this->getDateInterval()->format($format);
     }
 
-    /**
-     * @codeCoverageIgnore
-     */
     public function getDateInterval(): DateInterval
     {
         return $this->dateInterval;

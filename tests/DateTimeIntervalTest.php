@@ -334,4 +334,21 @@ class DateTimeIntervalTest extends TestCase
 
         self::assertEquals(-0.0, $dateTimeInterval->getMicroSeconds(false));
     }
+
+    /*
+     * FORMAT
+     */
+
+    public function testFormat(): void
+    {
+        $supDate = new DateTime('2021-08-27 00:00:00');
+        $infDate = new DateTime('2022-09-29 23:35:59');
+
+        $dateTimeInterval = new DateTimeInterval($infDate, $supDate);
+
+        self::assertEquals(
+            '1 years, 1 months, 2 days, 23 hours, 35 minutes, 59 seconds',
+            $dateTimeInterval->format('%y years, %m months, %d days, %h hours, %i minutes, %s seconds')
+        );
+    }
 }
