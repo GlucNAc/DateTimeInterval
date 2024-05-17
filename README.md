@@ -115,13 +115,13 @@ MIT License (MIT). Please see [LICENSE](https://gitlab.com/GlucNAc/DateTimeInter
 [badge-release]: https://img.shields.io/packagist/v/GlucNAc/DateTimeInterval.svg?style=flat-square&label=release
 [badge-license]: https://img.shields.io/packagist/l/GlucNAc/DateTimeInterval.svg?style=flat-square
 [badge-php]: https://img.shields.io/packagist/php-v/GlucNAc/DateTimeInterval.svg?style=flat-square
-[badge-pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/master/pipeline.svg
-[badge-coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/badges/master/coverage.svg
+[badge-pipeline]: https://img.shields.io/github/actions/workflow/status/GlucNAc/DateTimeInterval/continuous-integration.yml?branch=master&style=flat-square&logo=github
+[badge-coverage]: https://codecov.io/gh/GlucNAc/DateTimeInterval/graph/badge.svg
 [badge-downloads]: https://img.shields.io/packagist/dt/GlucNAc/DateTimeInterval.svg?style=flat-square&colorB=mediumvioletred
 
 [php]: https://php.net
-[source]: https://gitlab.com/GlucNAc/DateTimeInterval
+[source]: https://github.com/GlucNAc/DateTimeInterval
 [packagist]: https://packagist.org/packages/GlucNAc/DateTimeInterval
-[pipeline]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master
-[coverage]: https://gitlab.com/GlucNAc/DateTimeInterval/-/commits/master
+[pipeline]: https://github.com/GlucNAc/DateTimeInterval/actions/workflows/continuous-integration.yml
+[coverage]: https://codecov.io/gh/GlucNAc/DateTimeInterval
 [downloads]: https://packagist.org/packages/GlucNAc/DateTimeInterval
