@@ -1,26 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GlucNAc\DateTimeInterval;
 
 use DateInterval;
-use RuntimeException;
 
 /**
- * Class DateTimeInterval
- *
  * * <em>$supDate</em> should be greater than <em>$infDate</em>.
  *
  * * Returns negative value if <em>$supDate</em> &lt; <em>$infDate</em>,
- * unless <em>$forceReturningPositiveValue</em> = true.
+ * unless <em>$returnAbsoluteValue</em> = true.
  */
 class DateTimeInterval
 {
-    private DateInterval $dateInterval;
+    private readonly DateInterval $dateInterval;
 
     public function __construct(
-        \DateTimeInterface $supDate,
-        \DateTimeInterface $infDate,
-        bool $returnAbsoluteValue = false
+        readonly \DateTimeInterface $supDate,
+        readonly \DateTimeInterface $infDate,
+        readonly bool $returnAbsoluteValue = false
     ) {
         $this->dateInterval = \date_diff($infDate, $supDate, $returnAbsoluteValue);
     }
@@ -52,7 +51,7 @@ class DateTimeInterval
     {
         $count = $this->dateInterval->y;
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -88,7 +87,7 @@ class DateTimeInterval
             $count += 12 * $this->dateInterval->y;
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -120,17 +119,17 @@ class DateTimeInterval
      *
      * @see date_diff()
      *
-     * @throws RuntimeException
+     * @throws DateTimeIntervalException
      */
     public function getDays(bool $absoluteCount = true): int
     {
         $count = $absoluteCount ? $this->dateInterval->days : $this->dateInterval->d;
 
         if ($count === false) {
-            throw new \RuntimeException('count is false');
+            throw new DateTimeIntervalException('count is false');
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -170,7 +169,7 @@ class DateTimeInterval
             $count += 24 * $this->dateInterval->days;
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -206,7 +205,7 @@ class DateTimeInterval
             $count += 60 * abs($this->getHours());
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -242,7 +241,7 @@ class DateTimeInterval
             $count += 60 * abs($this->getMinutes());
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
     /**
@@ -278,12 +277,10 @@ class DateTimeInterval
             $count += 1000 * abs($this->getSeconds());
         }
 
-        return $this->isNegative() ? - $count : $count;
+        return $this->isNegative() ? -$count : $count;
     }
 
-    /**
-     * @return bool
-     */
+
     public function isNegative(): bool
     {
         return (bool)$this->dateInterval->invert;
@@ -300,11 +297,9 @@ class DateTimeInterval
     }
 
     /**
-     * @return DateInterval|false
-     *
      * @codeCoverageIgnore
      */
-    public function getDateInterval()
+    public function getDateInterval(): DateInterval
     {
         return $this->dateInterval;
     }

@@ -3,7 +3,7 @@
 ARGS := $(wordlist 2, $(words $(MAKECMDGOALS)), $(MAKECMDGOALS))
 $(eval $(ARGS):;@:)
 
-COMPOSE = docker-compose --env-file docker/.env.local -f docker-compose.yml -p datetimeinterval
+COMPOSE = docker compose --env-file docker/.env.local -f compose.yml -p datetimeinterval
 PHP = $(COMPOSE) exec php
 
 #####################################################################################################################
@@ -19,7 +19,10 @@ log: ## Follow the given container's logs
 up: ~/.composer ./docker/.env.local ## Start the containers
 	$(COMPOSE) up -d
 
-.PHONY: build down logs up
+in: ## Enter the php container
+	$(PHP) ash
+
+.PHONY: build down logs up in
 
 #####################################################################################################################
 ## COMPOSER                                                                                                        ##
@@ -35,15 +38,17 @@ composer:
 #####################################################################################################################
 
 fix: vendor ## Execute linters and check style
-	$(PHP) composer fix
+	$(PHP) vendor/bin/ecs --fix
 
 check: vendor ## Execute linters and check style
 	$(PHP) composer check
 
-test: vendor ## Run tests suites
-	$(PHP) composer test
+tests: vendor ## Run tests suites
+	$(PHP) vendor/bin/ecs
+	$(PHP) vendor/bin/phpstan
+	$(PHP) vendor/bin/phpunit
 
-.PHONY: fix check test
+.PHONY: fix check tests
 
 #####################################################################################################################
 ## FILES                                                                                                           ##
